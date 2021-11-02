@@ -8,6 +8,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class ErrorDetails {
+    public ErrorDetails(String message2, String description) {
+        message = message2;
+        details = description;
+    }
     private String message;
     private String details;
 }

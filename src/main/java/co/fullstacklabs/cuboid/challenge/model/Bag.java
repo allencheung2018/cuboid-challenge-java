@@ -40,6 +40,30 @@ public class Bag {
         this.setTitle(title);
     }
 
+    public void setTitle(String title2) {
+        title = title2;
+    }
+
+    public void setVolume(double volume2) {
+        volume = volume2;
+    }
+
+    public void setId(Long id2) {
+        this.id = id2;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Double getVolume() {
+        return volume;
+    }
+
+    public long getId() {
+        return id;
+    }
+
     /**
      * Returns an unmodifiable List containing the cuboids elements.
      *
