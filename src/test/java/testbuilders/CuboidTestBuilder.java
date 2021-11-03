@@ -1,5 +1,6 @@
 package testbuilders;
 
+import co.fullstacklabs.cuboid.challenge.dto.CuboidDTO.CuboidDTOBuilder;
 import co.fullstacklabs.cuboid.challenge.model.Bag;
 import co.fullstacklabs.cuboid.challenge.model.Cuboid;
 import lombok.Builder;
@@ -23,5 +24,43 @@ public class CuboidTestBuilder {
         private float height = 2f;
         private float depth = 3f;
         private Bag bag = BagTestBuilder.builder().id(1L).build();
+
+        public CuboidBuilder(){
+
+        }
+
+        public CuboidBuilder id(long id){
+            bag.setId(id);
+            return this;
+        }
+
+        public CuboidBuilder width(float w){
+            width = w;
+            return this;
+        }
+
+        public CuboidBuilder height(float h){
+            height = h;
+            return this;
+        }
+
+        public CuboidBuilder depth(float d){
+            depth = d;
+            return this;
+        }
+
+        public CuboidBuilder bag(Bag b){
+            bag = b;
+            return this;
+        }
+
+        public Cuboid build(){
+            Cuboid cuboid = cuboid(bag.getId(), width, height, depth, bag);
+            return cuboid;
+        }
+    }
+
+    public static CuboidBuilder builder() {
+        return new CuboidTestBuilder.CuboidBuilder();
     }
 }

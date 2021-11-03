@@ -35,9 +35,13 @@ public class Bag {
     @Setter(AccessLevel.PRIVATE)
     private List<Cuboid> cuboids = new ArrayList<>();
 
+    public Bag(){}
+
     public Bag(String title, double volume) {
-        this.setVolume(volume);
-        this.setTitle(title);
+        //this.setVolume(volume);
+        //this.setTitle(title);
+        this.title = title;
+        this.volume = volume;
     }
 
     /**
@@ -51,5 +55,21 @@ public class Bag {
 
     public void addCuboid(Cuboid cuboid) {
         cuboids.add(cuboid);
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public Long getId(){
+        return id;
+    }
+
+    public void setId(Long id2) {
+        id = id2;
     }
 }
