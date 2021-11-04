@@ -26,6 +26,8 @@ public class CuboidDTO {
     @NotNull(message = "Cuboid related bag can't be null.")
     private Long bagId;
 
+    public CuboidDTO(){}
+
     public CuboidDTO(CuboidDTOBuilder cuboidDTOBuilder) {
         this.id = cuboidDTOBuilder.id;
         this.bagId = cuboidDTOBuilder.bagId;
@@ -38,21 +40,43 @@ public class CuboidDTO {
     public Long getBagId() {
         return bagId;
     }
+    public void setBagId(Long bagId) {
+        this.bagId = bagId;
+    }
 
     public Float getWidth() {
         return width;
     }
+    public void setWidth(Float width) {
+        this.width = width;
+    }
+
     public Float getHeight() {
         return height;
     }
+    public void setHeight(Float height) {
+        this.height = height;
+    }
+
     public Float getDepth() {
         return depth;
     }
+    public void setDepth(Float depth) {
+        this.depth = depth;
+    }
+
     public Double getVolume() {
         return volume;
     }
+    public void setVolume(Double volume) {
+        this.volume = volume;
+    }
+
     public Long getId() {
         return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public static class CuboidDTOBuilder{

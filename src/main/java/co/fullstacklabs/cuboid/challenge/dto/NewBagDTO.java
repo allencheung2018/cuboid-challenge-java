@@ -31,9 +31,15 @@ public class NewBagDTO {
     public String getTitle() {
         return title;
     }
+    public void setTitle(String title) {
+        this.title = title;
+    }
     
     public Double getVolume() {
         return volume;
+    }
+    public void setVolume(Double volume) {
+        this.volume = volume;
     }
 
     public static class NewBagDTOBuilder{

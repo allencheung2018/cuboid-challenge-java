@@ -27,6 +27,8 @@ public class BagDTO {
     private Double availableVolume;
     private List<CuboidDTO> cuboids;;
 
+    public BagDTO(){}
+
     public BagDTO(BagDTOBuilder bagDTOBuilder) {
         this.id = bagDTOBuilder.id;
         this.volume = bagDTOBuilder.volume;
@@ -36,21 +38,36 @@ public class BagDTO {
     public Long getId() {
         return id;
     }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Double getVolume() {
         return volume;
+    }
+    public void setVolume(Double volume) {
+        this.volume = volume;
     }
 
     public String getTitle() {
         return title;
     }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public Double getPayloadVolume() {
         return payloadVolume;
     }
+    public void setPayloadVolume(Double payloadVolume) {
+        this.payloadVolume = payloadVolume;
+    }
 
     public Double getAvailableVolume() {
         return availableVolume;
+    }
+    public void setAvailableVolume(Double availableVolume) {
+        this.availableVolume = availableVolume;
     }
 
     public List<CuboidDTO> getCuboids() {
