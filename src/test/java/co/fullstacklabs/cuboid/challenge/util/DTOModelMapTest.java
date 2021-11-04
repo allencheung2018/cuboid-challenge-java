@@ -24,7 +24,7 @@ class DTOModelMapTest {
 
     @BeforeEach
     void setup() {
-        bagDTO = BagDTO.builder().id(1L).title("title1").volume(30d).build();;
+        bagDTO = BagDTO.builder().id(1L).title("title1").volume(30d).build();
         cuboidDTO1 = CuboidDTO.builder().bagId(bagDTO.getId()).id(2L).depth(1f).height(5f).width(3f).build();
         cuboidDTO2 = CuboidDTO.builder().bagId(bagDTO.getId()).id(3L).depth(1f).height(5f).width(3f).build();
         bagDTO.setCuboids(List.of(cuboidDTO1, cuboidDTO2));

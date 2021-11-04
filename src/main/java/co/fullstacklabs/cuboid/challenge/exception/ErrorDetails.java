@@ -10,17 +10,4 @@ import lombok.Setter;
 public class ErrorDetails {
     private String message;
     private String details;
-
-    public ErrorDetails(String message2, String description) {
-        this.message = message2;
-        this.details = description;
-    }
-
-    public String getDetails() {
-        return details;
-    }
-
-    public String getMessage() {
-        return message;
-    }
 }

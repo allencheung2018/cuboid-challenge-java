@@ -19,45 +19,9 @@ public class CuboidTestBuilder {
     }
 
     public static class CuboidBuilder {
-        private Long id;
         private float width = 3f;
         private float height = 2f;
         private float depth = 3f;
         private Bag bag = BagTestBuilder.builder().id(1L).build();
-
-        public CuboidBuilder(){}
-
-        public CuboidBuilder id(Long id){
-            this.id = id;
-            return this;
-        }
-
-        public CuboidBuilder width(float width){
-            this.width = width;
-            return this;
-        }
-
-        public CuboidBuilder height(float height){
-            this.height = height;
-            return this;
-        }
-
-        public CuboidBuilder depth(float depth){
-            this.depth = depth;
-            return this;
-        }
-
-        public CuboidBuilder bag(Bag bag){
-            this.bag = bag;
-            return this;
-        }
-
-        public Cuboid build(){
-            return CuboidTestBuilder.cuboid(id, width, height, depth, bag);
-        }
-    }
-
-    public static CuboidBuilder builder(){
-        return new CuboidTestBuilder.CuboidBuilder();
     }
 }

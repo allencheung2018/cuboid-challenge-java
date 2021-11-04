@@ -36,7 +36,7 @@ class BagServiceTest {
     void testCreatingSuccess() {
         String title = "Title";
         double volume = 20d;
-        Bag bag = BagTestBuilder.builder().title(title).volume(volume).build();;
+        Bag bag = BagTestBuilder.builder().title(title).volume(volume).build();
         Mockito.when(repository.save(Mockito.any(Bag.class))).thenReturn(bag);
 
         bagService.create(NewBagDTO.builder().title(title).volume(volume).build());
