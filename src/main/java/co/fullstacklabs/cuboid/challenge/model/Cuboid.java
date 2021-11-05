@@ -30,6 +30,10 @@ public class Cuboid {
     @JoinColumn(name = "BAG_ID", nullable = false)
     private Bag bag;
 
+    public Cuboid(){
+        
+    }
+
     public void setBag(Bag bag) {
         this.bag = bag;
     }

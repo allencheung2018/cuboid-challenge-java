@@ -23,6 +23,10 @@ public class NewBagDTO {
     @Size(max = Bag.TITLE_MAX_SIZE, message = "Bag title maximum size is " + Bag.TITLE_MAX_SIZE + " characters.")
     private String title;
 
+    public NewBagDTO(){
+        
+    }
+
     public NewBagDTO(NewBagDTOBuilder newBagDTOBuilder) {
         this.volume = newBagDTOBuilder.volume;
         this.title = newBagDTOBuilder.title;

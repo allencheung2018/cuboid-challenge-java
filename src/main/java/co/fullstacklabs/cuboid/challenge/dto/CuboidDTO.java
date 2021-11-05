@@ -26,6 +26,8 @@ public class CuboidDTO {
     @NotNull(message = "Cuboid related bag can't be null.")
     private Long bagId;
 
+
+
     public CuboidDTO(){}
 
     public CuboidDTO(CuboidDTOBuilder cuboidDTOBuilder) {
@@ -66,6 +68,7 @@ public class CuboidDTO {
     }
 
     public Double getVolume() {
+        volume = (double) (width*height*depth);
         return volume;
     }
     public void setVolume(Double volume) {

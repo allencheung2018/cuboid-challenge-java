@@ -5,8 +5,12 @@ import lombok.*;
 import javax.validation.constraints.NotNull;
 
 import co.fullstacklabs.cuboid.challenge.model.Bag;
+import co.fullstacklabs.cuboid.challenge.model.Cuboid;
 
 import javax.validation.constraints.Size;
+
+import antlr.PythonCharFormatter;
+
 import java.util.List;
 
 @Getter
@@ -27,7 +31,9 @@ public class BagDTO {
     private Double availableVolume;
     private List<CuboidDTO> cuboids;;
 
-    public BagDTO(){}
+    public BagDTO(){
+    
+    }
 
     public BagDTO(BagDTOBuilder bagDTOBuilder) {
         this.id = bagDTOBuilder.id;
@@ -57,6 +63,13 @@ public class BagDTO {
     }
 
     public Double getPayloadVolume() {
+        if(cuboids!=null && cuboids.size()>0){
+            for (CuboidDTO cuboidDTO : cuboids) {
+                payloadVolume += cuboidDTO.getWidth()*cuboidDTO.getHeight()*cuboidDTO.getDepth();
+                
+            }
+        }
+        System.out.println("payloadVolume="+payloadVolume + " cuboids"+cuboids.size());
         return payloadVolume;
     }
     public void setPayloadVolume(Double payloadVolume) {
