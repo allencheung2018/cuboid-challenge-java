@@ -63,13 +63,14 @@ public class BagDTO {
     }
 
     public Double getPayloadVolume() {
+        payloadVolume = (double) 0;
         if(cuboids!=null && cuboids.size()>0){
-            for (CuboidDTO cuboidDTO : cuboids) {
-                payloadVolume += cuboidDTO.getWidth()*cuboidDTO.getHeight()*cuboidDTO.getDepth();
-                
+            for(CuboidDTO cuboidDTO : cuboids) 
+            {
+                Double d = cuboidDTO.getVolume();
+                payloadVolume = payloadVolume + d;
             }
         }
-        System.out.println("payloadVolume="+payloadVolume + " cuboids"+cuboids.size());
         return payloadVolume;
     }
     public void setPayloadVolume(Double payloadVolume) {
@@ -77,6 +78,8 @@ public class BagDTO {
     }
 
     public Double getAvailableVolume() {
+        availableVolume = (double) 0;
+        availableVolume = volume - payloadVolume;
         return availableVolume;
     }
     public void setAvailableVolume(Double availableVolume) {

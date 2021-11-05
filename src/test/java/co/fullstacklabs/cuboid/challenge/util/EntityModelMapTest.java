@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeMap;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import testbuilders.BagTestBuilder;
 import testbuilders.CuboidTestBuilder;
@@ -30,10 +31,14 @@ class EntityModelMapTest {
         cuboid2 = CuboidTestBuilder.builder().bag(bag).id(3L).depth(2f).height(4f).width(3f).build();
         bag.addCuboid(cuboid1);
         bag.addCuboid(cuboid2);
+        //
+        // TypeMap<Bag, BagDTO> propertyMapper = mapper.createTypeMap(Bag.class, BagDTO.class);
+        // propertyMapper.addMapping(Bag::getCuboids, BagDTO::setCuboids);
     }
     @Test
     void testBagMapping() {
         BagDTO bagDTO = mapper.map(bag, BagDTO.class);
+        System.out.println("bag cuboid = "+bag.getCuboids().size() + " bagdto cuboid = "+bagDTO.getCuboids().size());
         Assertions.assertThat(bagDTO.getId()).isEqualTo(bag.getId());
         Assertions.assertThat(bagDTO.getTitle()).isEqualTo(bag.getTitle());
         Assertions.assertThat(bagDTO.getVolume()).isEqualTo(bag.getVolume());
