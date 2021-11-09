@@ -68,7 +68,10 @@ public class CuboidDTO {
     }
 
     public Double getVolume() {
-        volume = (double) (width*height*depth);
+        volume = 0d;
+        if(width!=null && height!=null && depth!=null){
+            volume = (double) (width*height*depth);
+        }
         return volume;
     }
     public void setVolume(Double volume) {
